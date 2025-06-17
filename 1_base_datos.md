@@ -171,6 +171,7 @@
   - price ***string*** : Precio del requerimiento
   - typeRequirementID *relation* : uno a muchos (tipo de requerimiento)
   - subServiceID *relation* : uno a muchos (Sub OT del requerimiento)
+  - order ***number***: numero de orden de aparicion en el presupuesto
 
 
 ## RELACIONES

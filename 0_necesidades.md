@@ -53,6 +53,22 @@ La empresa tiene dificultades para:
 - Contable
 - Client
 
+## TABLAS
+- Usuarios
+- Clientes
+- Servicios
+- Ventas
+- Compras
+- Guias
+- Inventario
+- Imagenes
+
+- Notas Credito
+- Vehiculos
+- Conductores
+
+
+
 ## FUNCIONALIDADES POR TIPO DE USUARIO
 ### GENERALES - DESKTOP|MOBILE
 - Login
