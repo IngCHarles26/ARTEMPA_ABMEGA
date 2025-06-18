@@ -6,7 +6,7 @@
 1. Acountant
 1. Client
 
-## Columnas | Pendiente
+### Columnas | Pendiente
 - id: **number** Identificador unico del usuario
 - userName: **string** Nombre de usuario para el ingreso a la aplicacion
 - password: **string_hashed** Contraseña del usuario para el ingreso a la aplicacion
@@ -18,10 +18,21 @@
 - address **string** Direccion de residencia del usuario
 - dni **number** Documento nacional de identificacion
 
-## Funciones
+### Funciones
 - Login o logout: Todos
 - Creacion de Usuarios: Admin
 
-## Consideraciones
+### Consideraciones
 - Limite de 3 sessiones por usuario
 - 
+
+
+# Empresa - companies (ABM o MEGA)
+### Columnas
+- id **number** identificador unico de la empresa
+- ruc **number** RUC de la empresa
+- name **string** Razon social de la empresa
+- address **string** Direccion de la empresa
+- bcpCCT **string** numero de cuenta corriente bcp
+- bcpCCI **string** numero de cuenta interbancario
+- spot **number** numero de cuenta para detracciones
