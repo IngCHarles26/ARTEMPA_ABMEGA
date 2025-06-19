@@ -22,8 +22,13 @@
 - number **number** % de detraccion aplicable segun el tipo
 
 # Seriales - serial
+### Columnas
 - id **number** identificador unico de la serial de comprobantes
 - name **string** descripcion de la serie de comprobantes
+
+### Consideraciones
+- 1 es para F001 (facturas de abm y megaman)
+- 2 es para T001 (guias de abm y megaman)
 
 # Ventas - invoices
 ### Columnas

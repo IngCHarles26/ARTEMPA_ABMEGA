@@ -1,4 +1,4 @@
-# USUARIOS
+# USUARIOS - users
 ## Tipos | .env
 0. Admin
 1. Office
