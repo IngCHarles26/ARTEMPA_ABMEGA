@@ -6,7 +6,7 @@
 
 # Unidad medida - measurment_units
 ### Columnas
-- id **number** identificador unico de moneda
+- id **number** identificador unico de medida (metros, kg, unidades)
 - name **string** unidad de medida
 
 # Codigo Facturas - item_invoice_codes
@@ -21,7 +21,7 @@
 - name **string** Descripcion del tipo de detraccion
 - number **number** % de detraccion aplicable segun el tipo
 
-# Seriales - serial
+# Seriales - serials
 ### Columnas
 - id **number** identificador unico de la serial de comprobantes
 - name **string** descripcion de la serie de comprobantes

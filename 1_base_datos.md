@@ -2,38 +2,38 @@
 
 ## TABLAS INDEPENDIENTES
 
-  ### Clients | Clientes 
+  ### Clients | Clientes | HECHO (cambio a entidades)
   - name ***string*** : Razon social del cliente
   - RUC ***number*** : RUC del cliente
   - address ***string*** : Direccion del cliente (facturacion)
   - isAbm ***boolean*** : Cliente habilitado de ABM
   - isMega ***boolean*** : Cliente habilitado de Megaman
 
-  ### TypeServices | Tipos de servicio
+  ### TypeServices | Tipos de servicio | HECHO
   - name ***string*** : Rebobinado, Mantenimiento, Fabricacion, Balanceo, Venta, Alineamiento, Reclado, Parada, Otros
 
-  ### PowerNames | Tipos de potencia
+  ### PowerNames | Tipos de potencia | HECHO
   - name ***string*** : HP, kW, CV, KVA
 
-  ### PartNames | Nombres de partes
+  ### PartNames | Nombres de partes | HECHO
   - name ***string*** : Rodamiento, Reten, Ventilador, Funda, Bornera, ...
 
-  ### PartBrands | Nombre de marcas de repuestos
+  ### PartBrands | Nombre de marcas de repuestos | HECHO
   - name ***string*** : SKF, KOYO, FAG, NTN, ....
 
-  ### Machines | Nombres de Maquinas
+  ### Machines | Nombres de Maquinas | HECHO
   - name ***string*** : Motor, Transformador, Motor universal, Motor DC, Freno, Generador, Motoreductor, ....
 
-  ### Positions | Puestos en el organigrama
+  ### Positions | Puestos en el organigrama | Innecesario
   - name ***string*** : Tecnico, contador, oficina, .....
 
-  ### MachineBrands | Nombres de marcas de maquinas
+  ### MachineBrands | Nombres de marcas de maquinas | HECHO
   - name ***string*** : Siemens, Delcrosa, WEG, AEG, CAT
 
-  ### TypeRequirements | tipos de requerimientos
+  ### TypeRequirements | tipos de requerimientos | HECHO 
   - name ***string*** : Servicio, repuesto, insumo, otros
 
-  ### Vehicles | Vehiculos de la empresa
+  ### Vehicles | Vehiculos de la empresa | HECHO
   - name ***string*** : Nombre dado al vehiculo
   - plate ***string*** : Placa al vehiculo
   - soat ***bigInt*** : Fecha vencimiento soat
@@ -42,7 +42,7 @@
 ---
 ## TABLAS DEPENDIENTES SIMPLES
 
-  #### Contacts | Persona de contacto del cliente
+  #### Contacts | Persona de contacto del cliente  | HECHO
   - name ***string*** : Nombre y apellido del encargado del cliente
   - email ***string*** : correo de contacto
   - phone ***number*** : Numero de telefono de contacto
@@ -51,7 +51,7 @@
     ----
     PENDIENTE sistema login
     ----
-  ### Users | Usuarios de la aplicacion - (trabajadores de la empresa)
+  ### Users | Usuarios de la aplicacion - (trabajadores de la empresa)  | HECHO
   - name ***string*** : Nombre y apellido del trabajador
   - userName ***string*** : usuario del trabajador
   - password ***hash*** : contraseña del trabajador
@@ -60,7 +60,7 @@
   - dni ***number*** : DNI del trabajador
   - positionID *relation* : uno a muchos (que puesto ocupa el trabajador)
 
-  ### Stock | Inventario de repuestos
+  ### Stock | Inventario de repuestos  | HECHO
   - name ***string*** : Descripcion del repuesto (6204, 25-30-6, ...)
   - quantity ***number*** : Cantidad en stock
   - buyPrice ***number*** : PRecio de compra en soles
@@ -68,19 +68,19 @@
   - partNameID *relation* : Relacion uno a muchos (que tipo de repuesto es)
   - partBrandID *relation* : Relacion uno a muchos (que marca de repuesto es)
 
-  ### ServiceLimits | Alcance de tipos de servicios
+  ### ServiceLimits | Alcance de tipos de servicios  | HECHO
   - name ***string*** : Descripcion del procedimiento
   - order ***number*** : Orden del procedimiento
   - typeServiceID ***relation*** : Uno a muchos (Tipo de servicio)
 
-  ### TechnicalRequirements | Peticiones de compra de técnicos
+  ### TechnicalRequirements | Peticiones de compra de técnicos | HECHO
   - name ***string*** : Descripcion de lo solicitado
   - quantity ***number*** : Cantidad de lo solicitado
   - done ***bool*** : Compra efectuada
   - userID ***relation*** :Uno a muchos - Solicitante
 
 
-## TABLAS DEPENDIENTES COMPLEJAS
+## TABLAS DEPENDIENTES COMPLEJAS  | HECHO
   ### Invoices | Facturas de venta (verificar con la documentacion de sunat.api)
   - serial ***string*** : Serie de la factura (F001)
   - number ***number*** : Numero de la factura 
@@ -99,14 +99,14 @@
   - serviceID *relation* : Relacion uno a muchos (a que OT pertenece)
   
 
-  ### ItemsInvoice | Elementos de facturas
+  ### ItemsInvoice | Elementos de facturas | HECHO
   - quantity ***number*** : Cantidad
   - description ***string*** : Descripcion
   - order ***number*** : Orden de impresion
   - unitPrice ***number*** : Valor Unitario
   - invoiceID *relation* : Uno a muchos (a que factura pertenece)
 
-  ### Guides | Guias de remision
+  ### Guides | Guias de remision | HECHO
   - company ***boolean*** : *True* para ABM y *false* para Megaman
   - serial ***string*** : Serie de la guia (T001)
   - number ***string*** : Numero de la guia
@@ -120,7 +120,7 @@
   - serviceID *relation* : Relacion uno a muchos (a que servicios pertenece)
   - userID *relation* :  Relacion uno a muchos (que trabajador lo despacha)
 
-  ### ItemsGuide | Elementos de Guia
+  ### ItemsGuide | Elementos de Guia | HECHO
   - quantity ***number*** : Cantidad
   - description ***string*** : Descripcion
   - order ***number*** : Orden de impresion

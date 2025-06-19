@@ -5,11 +5,13 @@
 - name **string** Razon social del cliente
 - shortName **string** razon social acortada del cliente
 - address **string** Direccion de facturacion del cliente
+- folderDriveId **string** 
 
 - companyId ***relation*** muchos a muchos con Empresas (abm, mega, etc)
 
 ### Consideraciones
 - Se guardan proveedores y clientes, si no tiene relacion es un proveedor
+- Se va 
 
 # Contactos de Empresas - entity_contacts
 ### Columnas

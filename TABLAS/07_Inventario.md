@@ -1,6 +1,6 @@
 # Tipos repuesto - spare_types
 ### Columnas
-- id **number** identificador unico del tipo de activo
+- id **number** identificador unico del tipo de activo (rodamiento, sello, reten, cable vulcanizado, etc)
 
 # Marcas repuesto - spare_brands
 ### Columnas
