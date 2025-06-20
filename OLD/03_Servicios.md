@@ -95,7 +95,7 @@
 ## Funciones
 -
 
-# Descripcion del tipo de servicio
+# Descripcion del tipo de servicio - service_type_instructions
 ### Columnas
 - id **number** identificador de la descripcion del tipo de servicio
 - order **number** numero de orden del proceso
