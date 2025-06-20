@@ -1,3 +1,16 @@
+# Empresa - companies (ABM o MEGA)
+### Columnas
+- id **number** identificador unico de la empresa
+- ruc **number** RUC de la empresa
+- name **string** Razon social de la empresa
+- address **string** Direccion de la empresa
+- bcpCCT **string** numero de cuenta corriente bcp
+- bcpCCI **string** numero de cuenta interbancario
+- spot **number** numero de cuenta para detracciones
+
+
+
+
 # USUARIOS - users
 ## Tipos | .env
 0. Admin
@@ -26,13 +39,23 @@
 - Limite de 3 sessiones por usuario
 - 
 
-
-# Empresa - companies (ABM o MEGA)
+# Sesiones - sessions
 ### Columnas
-- id **number** identificador unico de la empresa
-- ruc **number** RUC de la empresa
-- name **string** Razon social de la empresa
-- address **string** Direccion de la empresa
-- bcpCCT **string** numero de cuenta corriente bcp
-- bcpCCI **string** numero de cuenta interbancario
-- spot **number** numero de cuenta para detracciones
+- id **string** identificador unico de la sesion del usuario
+- expireDate **bigInt** fecha en segundos del limite de sesion del usuario
+
+- userId ***relation*** uno a muchos (a que usuario pertenece la sesion) 
+
+
+### Consideraciones
+- Maximo 3 sesiones por usuario
+
+
+
+
+# NOTAS MIDU
+- hashear el password con bcrypt
+- id-username-password
+- validar username y password (requerimientos en el nombre del usuario) - se requiere definir las condiciones
+- validar que el user name sea unico
+- usa bcryupt para comparar el passwword ingresado con el hash
