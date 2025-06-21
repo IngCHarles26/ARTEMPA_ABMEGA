@@ -18,6 +18,7 @@
 - proformDaysWarrantyl **number** dias de garantia por el servicio
 - proformDaysValidate **number** dias de validez del presupuesto
 - proformPlaceDispatch **string** lugar de entrega del servicio
+- pdfDriveId **string** id del archivo pdf guardado en google drive
  
 - companyId ***relation_101*** uno a muchos (que empresa realiza el servicio abm o mega)
 - entityId ***relation_201*** uno a muchos (cliente se realiza el servicio)

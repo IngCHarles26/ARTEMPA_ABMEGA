@@ -2,13 +2,13 @@
 ### Columnas
 - id **number** identificador unico de guias
 - number **number** numero de guia de remision
-- pdfIdDrive ***string** id del archivo pdf en drive
 - issueDate **bigInt** Fecha de emision de la guia en segundos (millis/1000)
 - transferDate **bigInt** Fecha de traslado de la guia en segundos (millis/1000)
 - transferDescription **string** descripcion del traslado (en caso se selecciona otros en los motivos)
 - privateTransport **bool** true si el transporte es privado
 - kg **number** peso total de la mercancia transportada
 - obs **string** observaciones de la factura
+- pdfDriveId ***string** id del archivo pdf en drive
 
 - transfeReasonId ***relation_112*** uno a muchos (cual es el motivo del trasladp)
 - entityId ***relation_201*** uno a muchos (a que cliente se le esta entregando )

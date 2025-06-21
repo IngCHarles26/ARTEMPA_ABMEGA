@@ -11,9 +11,9 @@
 - paid **bool** indica si la factura esta pagada o no
 - payDate **bigInt** fecha de pago en segundos (millis/1000)
 - payOperation **number** numero de operacion del pago de la factura
-- pdfIdDrive **string** id del archivo pdf en google drive
-- xmlIdDrive **string** id del archivo xml en google drive
-- cdrIdDrive **string** id del archivo cdr en google drive
+- pdfDriveId **string** id del archivo pdf en google drive
+- xmlDriveId **string** id del archivo xml en google drive
+- cdrDriveId **string** id del archivo cdr en google drive
 - hash **string** hash de la factura retorno de la api de facturacion
 - xmlLink **string** enlace del xml de la api de facturacion
 - xmlCdr **string** enlace del cdre de la api de facturacion
