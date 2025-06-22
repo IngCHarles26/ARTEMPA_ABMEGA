@@ -23,9 +23,10 @@
 - companyId ***relation_101*** uno a muchos (que empresa realiza el servicio abm o mega)
 - entityId ***relation_201*** uno a muchos (cliente se realiza el servicio)
 - entityContactId ***relation_202*** uno a muchos (persona de contacto del cliente)
-- userId ***relation_100*** uno a muchos (tecnico a cargo del servicio)
 - invoiceId ***relation_210*** muchos a muchos (cual es la factura del servicio)
 - deliveryNoteId ***relation_212*** muchos a muchos (cual es la guia de despacho de los servicios)
+- userId ***relation_200*** uno a muchos (usuario office creador del servicio)
+
 
 
 ### Funciones

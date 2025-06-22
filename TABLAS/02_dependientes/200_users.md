@@ -17,6 +17,10 @@
 - phone **number** Telefono de contacto (whatsapp, telegram)
 - address **string** Direccion de residencia del usuario
 - dni **number** Documento nacional de identificacion
+- active **bool** Indica si el usuario esta activo o no
+
+- entityId **relation_201** uno a muchos (si el usuario esta asocciado a un cliente)
+
 
 ### Funciones
 - Login o logout: Todos

@@ -1,0 +1,22 @@
+# Acciones (desktop - mobile)
+- Intercambiar entre la lista de compañias
+- Crear ots y sub ots
+- Visualizar la lista de OTS
+  - ot
+  - fecha
+  - cliente
+  - descripcion
+- Al hacer click en una ot nos muiiestra la informacion completa del servicio y se puede editar
+  - lista de sub ots (muestra un )
+    - sub ot
+    - encargado
+    - tipo de servicio
+    - requerimientos del encargado
+  - Acciones de presupuesto
+    - enviar por correo
+    - editar
+    - visualizar
+  - Emitir facturas, guias y notas de credito y asociarla a una o varias ots
+- Las mismas acciones que el contador, solo que dando la opcion de ver el detalle de cada item
+- Crear entidades y personas de contacto
+- Subir informacion de compras 

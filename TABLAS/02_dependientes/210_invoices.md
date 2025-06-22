@@ -8,9 +8,12 @@
 - obs **string** Observaciones en la factura
 - total **number** total del monto facturado sin igv
 - igv **number** % de igv de la factura
-- paid **bool** indica si la factura esta pagada o no
+- paid **bool** indica si la factura ha sido pagada (sin detraccion)
+- detractionPaid **bool** indica si la detraccion de la factura ha sido pagada
 - payDate **bigInt** fecha de pago en segundos (millis/1000)
+- detractionPayDate **bigInt** fecha de pago en segundos de la detraccion
 - payOperation **number** numero de operacion del pago de la factura
+- detraactionPayOperation **number** numero de operacion del pago de la detraccion
 - pdfDriveId **string** id del archivo pdf en google drive
 - xmlDriveId **string** id del archivo xml en google drive
 - cdrDriveId **string** id del archivo cdr en google drive
@@ -18,6 +21,7 @@
 - xmlLink **string** enlace del xml de la api de facturacion
 - xmlCdr **string** enlace del cdre de la api de facturacion
 - comment **string** comentarios adicionales de la factura (control interno)
+- active **bool** muestra si la factura ha sido anulada por una nota de credito 
 
 - serialId ***relation_103*** uno a muchos (que numero de serie es la factura)
 - detractionId **relation_111** uno a muchos (que tipo de detraccion es)
@@ -25,6 +29,7 @@
 - entityId ***relation_201*** uno a muchos (a que cliente pertenece) 
 - companyId ***relation_101*** uno a muchos (que empresa abm-mega emitio la factura)
 - serviceId ***relation_207*** muchos a muchos (a que OTs pertenece la factura)
+- creditNoteId ***relation_214*** uno a uno (que nota de credito esta anulado la factura)
 
 
 ### Funciones
