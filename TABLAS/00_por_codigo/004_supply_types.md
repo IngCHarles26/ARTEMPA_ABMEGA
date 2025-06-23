@@ -3,7 +3,7 @@
 - id **number** identificador unico del tipo de alimentacion
 - name **string** descripcion del tipo de alimentacion (mono, trifa, dc, no aplica, etc, etc)
 
-### Valores predeterminados
+### Informacion inicial
 | id  | name  |
 |:-:  |:-:    |
 |1    |monofásico|
@@ -14,3 +14,7 @@
 
 ### Consideraciones
 - Solo se considera: monofasica, trifasica y dc
+
+
+### Peticiones
+- Solicitar la lista de todo

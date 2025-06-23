@@ -10,5 +10,5 @@
 - companyId  ***relation_101*** muchos a muchos con Empresas (abm, mega, etc)
 
 ### Consideraciones
-- Se guardan proveedores y clientes, si no tiene relacion es un proveedor
+- Se guardan proveedores y clientes, si no tiene relacion en companyId  es un proveedor
 - Se va 

@@ -4,7 +4,7 @@
 - name **string** unidad de medida (cv, hp, kva, va, kw, w)
 - factor **number** factor de convercion hacia hp
 
-### Valores Predeterminados
+### Informacion inicial
 | id  | name  | factor|
 |:-:  |:-:    |:-:    |
 |1    |hp     |1      |
@@ -14,3 +14,7 @@
 
 ### Consideraciones
 - Solo se considera: CV, HP, kVA, VA, W, kW
+
+
+### Pedticiones
+- Solicitar la lista de todo

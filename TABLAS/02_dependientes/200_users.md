@@ -12,14 +12,13 @@
 - password: **string_hashed** Contraseña del usuario para el ingreso a la aplicacion
 - name: **string** Nombre del usuario
 - lastName **string** Apellido del usuario
-- rol **string** Tipo de usuario
+- role **string** Tipo de usuario
 - active **bool** Configurar si el usuario esta activo
 - phone **number** Telefono de contacto (whatsapp, telegram)
 - address **string** Direccion de residencia del usuario
 - dni **number** Documento nacional de identificacion
-- active **bool** Indica si el usuario esta activo o no
 
-- entityId **relation_201** uno a muchos (si el usuario esta asocciado a un cliente)
+- companyId **relation_201** uno a muchos (si el usuario esta asocciado a un cliente) // por definir (usado para que los clientes puedan descargar las facturasen nuestra web)
 
 
 ### Funciones

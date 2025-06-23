@@ -1,3 +1,18 @@
+# Opciones de Menu
+## Estados de cuenta
+  > accountant/bank-states
+  ### Visual
+  - Muestra la lista de estados de cuenta: mes, año, company y pdf
+  -  
+  ### Funcnioamiento
+  - Se puede filtrar (company) y ordenar (mes, año, company) 
+  - Al hacer click en pdf, debe redireccionar al enlace de google drive
+
+## 
+
+
+
+
 # Acciones (desktop)
 - Descargar los estados de cuenta, facturas y notas de credito
 - Visualizar el estado ventas/compras por mes y año
@@ -25,9 +40,6 @@
   - numero
   - factura que anula
   - cliente
-- Visualizar lista de estados de cuenta
-  - mes 
-  - año
 - Filtrar las compras, ventas y notas de credito por (o la combinacion de estas):
   - mes y año
   - cliente

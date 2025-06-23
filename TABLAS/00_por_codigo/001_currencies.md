@@ -4,7 +4,7 @@
 - name **string** nombre de la moneda
 - short **string** abreviacion de la moneda (PEN USD)
 
-### Datos Predeterminados
+### Informacion inicial
 | id  | name  | short |
 |:-:  |:-:    |:-:    |
 |1    |soles  |PEN    |
@@ -12,3 +12,6 @@
 
 ### Consideraciones
 - solo se cuenta con soles y dolares
+
+### Peticiones
+- Solicitar la lista de de todos

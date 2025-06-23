@@ -5,3 +5,9 @@
 
 ## Funciones
 -
+
+### Peticiones
+- Extraer informacion de todos: id, name
+- Agregar un valor nuevo
+- Editar la informacion por ID
+- 

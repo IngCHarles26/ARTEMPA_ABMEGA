@@ -8,3 +8,14 @@
 - soatPdfIdDrive **string** id del archivo pdf del soat
 - revPdfIdDrive **string** id del archivo pdf de la revision tecnica
 
+
+
+### Peticiones
+- Extraer la lista completa: id, name, placa (seleccion en la guia de remision)
+- Editar la informacion por id
+- Agregar un valor nuevo
+- Extraer la informacion por ID
+- Visualizar la informacion por ID
+
+
+

@@ -6,3 +6,11 @@
 ### Consideraciones
 - 1 es para F001 (facturas de abm y megaman)
 - 2 es para T001 (guias de abm y megaman)
+- No se pueden editar los seriales, solo agregar nuevos
+
+
+
+### Peticiones
+- Extraer la lista total: id, name
+- Agregar un valor nuevo
+- 

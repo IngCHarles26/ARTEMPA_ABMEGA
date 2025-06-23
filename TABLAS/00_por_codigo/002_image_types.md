@@ -3,7 +3,7 @@
 - id **number** identificador unico de tipo de imagen
 - name **string** descripcion del tipo de imagen (informe, esquema, cuaderno)
 
-### Datos predeterminados
+### Informacion inicial
 | id  | name  |
 |:-:  |:-:    |
 |1    |proceso|
@@ -13,3 +13,6 @@
 
 ### Consideraciones
 - Solo se considera informe, esquema, recepcion, 
+
+### Peticiones
+- Solicitar la lista de todo

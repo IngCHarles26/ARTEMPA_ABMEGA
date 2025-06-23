@@ -35,3 +35,39 @@
 ### Funciones
 - En las observaciones se debe agregar automaticamente el numero de guias de recojo, entrega, orden de compra y conformidad de servicio si es que estan existen al momento de generar la factura
 - Si la 
+
+
+
+### Consideraciones
+```javascript
+  // modelo del body
+    {
+        "documento": "factura",
+        "serie": "F001",
+        "numero": 1,
+        "fecha_de_emision": "2024-04-03",
+        "fecha_de_vencimiento": "2024-04-03",
+        "moneda": "PEN",
+        "orden_compra_servicio": "123456789",
+        "tipo_operacion": "0101",
+        "cliente_tipo_de_documento": "6",
+        "cliente_numero_de_documento": "20123456789",
+        "cliente_denominacion": "EMPRESA DE SERVICIOS S.A.C",
+        "cliente_direccion": "AV. SAN MARTIN - LIMA",
+        "items": [
+            {
+                "unidad_de_medida": "NIU",
+                "descripcion": "Nombre del producto",
+                "cantidad": "1",
+                "valor_unitario": "234",
+                "porcentaje_igv": "18",
+                "precio_unitario": "276.12",
+                "codigo_tipo_afectacion_igv": "10",
+                "descuento": "0"
+            }
+        ],
+        "total_igv": "42.12",
+        "total_gravada": "234",
+        "total": "276.12"
+    }
+```

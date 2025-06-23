@@ -20,3 +20,9 @@
 - Las mismas acciones que el contador, solo que dando la opcion de ver el detalle de cada item
 - Crear entidades y personas de contacto
 - Subir informacion de compras 
+- Editar la informacion de las companies
+- Ver todas las base de datos para editar la informacion (seriales, carros, drivers, etc etc)
+- COnsultar datos de ruc
+- Consultar validez de una factura
+- Anular un comprobante (maximo 2 dias despues)
+ 

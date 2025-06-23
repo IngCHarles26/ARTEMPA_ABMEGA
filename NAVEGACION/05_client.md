@@ -8,3 +8,8 @@
 # Observaciones
 - El usuario y contraña son su ruc
 - Consultar ocn milton si desea que los clientes puedan descargar sus coducmentos electronicos
+
+## Componente
+### Visual
+### Funcionamiento
+### Peticiones
