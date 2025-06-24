@@ -10,6 +10,34 @@
   - Se puede filtrar (role, active) y ordenar (lastname, role, active) la lista de usuarios
   ### Peticiones
   >GET /list-users
+  ```javascript
+    return {
+      success: true/false,
+      data: [
+        {
+          id,
+          userName,
+          name,
+          lastName,
+          active,
+          phone,
+          address,
+          dni
+        },...
+      ]
+    }
+  ```
+  >POST /edit-user/:id
+  ```javascript
+    body = {
+      ?role: '',
+      ?active: '',
+      ?dni: '',
+    }
+    return {
+      success: true/false,
+    }
+  ```
 
 
 ## Crear Users
@@ -19,4 +47,18 @@
   ### Funcionamiento
   - Hace la peticion del nuevo usuario y verifica que quien la haga sea el usuario admin
   ### Peticiones
+  >POST /create-user
+  ```javascript
+    body = {
+      userName = '',
+      password = '',
+      role = '',
+      name = '',
+      lastname = '',
+      phone = '',
+    }
+    return {
+      success: true/false,
+    }
+  ```
 

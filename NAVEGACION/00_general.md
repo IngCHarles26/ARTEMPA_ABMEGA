@@ -1,4 +1,5 @@
 # Rutas generales
+
 ## JWT
 El json web token tendra la siguiente estructura
 ```javascript
@@ -10,7 +11,9 @@ El json web token tendra la siguiente estructura
     limitTime: '00:00 del dia siguiente'
   }
 ```
-
+## Peticiones
+- Toda la informacion que sea enviada del servidor, se va a guardar en el store para futuras consultas y evitar peticiones repetidas
+- Las tablas que solo son id-name, tendran el mismo endpoint devolviendo un objeto [id]:name
 
 ## Acceso general
 - Se utilizara el local storage (id, name y role) para decirle al front los componentes a mostrar, el usuario que esta realizando las acciones y el nombre del usuario; las acciones que el usuario haga se validan contrastando la informacion del local storage y el JWT generado en el login, además de guardar el role, id y nombre en el store.
@@ -24,7 +27,7 @@ El json web token tendra la siguiente estructura
 ```javascript
   return {
     success: true/false,
-    userInfo = {
+    data  = {
       id: 0,
       name: '',
       userName: '',
@@ -55,7 +58,7 @@ El json web token tendra la siguiente estructura
     password: ''
   }
   return {
-    userInfo:{
+    data:{
       id: 0,
       name: '',
       userName: '',

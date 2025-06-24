@@ -7,7 +7,8 @@
 - paid **bool** la compra esta pagada o no
 - typePaid **bool** true para efectivo y false para transferencia
 - payOperation **number** numero de operacion de pago (si es por transferencia)
-- comments **string** comentarios de la factura (control iterno)
+- payDate **bigInt** fecha de pago de la factura
+- comments **string** comentarios de la factura (control interno)
 
 - serialId ***relation_103*** serie de la factura de compra
 - entityId ***relation_201*** uno a muchos (a que proveedor pertenece la compra)
