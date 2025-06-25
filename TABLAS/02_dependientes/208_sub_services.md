@@ -8,6 +8,8 @@
 - clientComments **string** indicaciones del cliente para con este sub servicio (control interno) 
 - startDate **bigInt** fecha de inicio de servicio
 - finishDate **bigInt** fecha de finalizacion del servicio (si esta vacia se considera aun)
+- closedRequirements **bool** indica que el servicio esta cerrado y el tecnico no puede agregar mas requerimientos
+- operatorComments **string** comentarios del servicio del tecnico
 
 - serviceId ***relation_207*** uno a muchos (a que OT pertenece el sub servicio)
 - serviceTypeId ***relation_102*** uno a muchos (que tipo de servicio)
@@ -20,3 +22,4 @@
 
 
 ## Funciones
+- el closedRequirements lo marca el 
