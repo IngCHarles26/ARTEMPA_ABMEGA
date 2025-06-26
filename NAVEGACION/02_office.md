@@ -1,8 +1,20 @@
 # Opciones de menu
 ## Servicios
+  > office/services
+  ### Visual
+  - 
+  ### Funcionamiento
+  ### peticiones
 
 ## Requerimientos tecnicos
-
+  > office/requirements
+  ### Funcionamiento
+  - Visualiza los requerimientos solicitados por los operadores
+  - Marca los requerimientos adquiridos
+  ### Visual
+  - Muestra
+    
+  ### Peticiones
 ## Presupuesto
 
 ## Compras
