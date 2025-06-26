@@ -1,4 +1,4 @@
-# Esquemas - schemnes
+# Esquemas - schemes
 ### Columnas
 - id **number** identificador unico del esquema
 - groups **number** numeo de grupos

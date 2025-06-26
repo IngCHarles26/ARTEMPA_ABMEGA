@@ -10,9 +10,11 @@
   - En el componente detalles, en un sector muestra para ingresar los requerimientos (cantidad, tipo, descripcion)
   - En el componente detalles,, un sector para subir/ver imagenes (cuaderno y proceso), que al entrar abre un modal para subir la informacion, en caso de tener un esquema asignado, mostrara el enlace del esquema
   - Tiene que haber un boton para guardar los datos
-  - Debe mostrar los comentarios que ha echo el cliente antes del servicio
+  - Debe mostrar los comentarios que ha echo el cliente antes del servicio (subido por el creador de la sub-ot/OT)
   - Tiene que haber un input para que el tecnico deje los comentarios del servicio
   - Una seccion para marcar el inicio y fin del servicio
+  - Tiene que haber la opcion para editar los datos de la sub ot (solo lo correspondiente al tecnico)
+  - Tiene que haber una opcion para mostrar los enlaces de las imagenes asociadas al sub servicio
   ### Funcionamiento
   - La descripcion toma los datos de palca del motor
   - AL cargar el detalle del servicio asignado, se cargan los datos de la base de datos, el tecnico puede editar los requerimientos siempre y cuando no haya serrado la opcion el usuario office
@@ -51,6 +53,15 @@
       success: true/false,
     }
   ```
+  >GET operator/images/:subServiceId
+  ```javascript
+    return {
+      success: true/false,
+      data: [
+        {id,name,idDrive,typeImage},...
+      ]
+    }
+  ```
   >POST operator/add/sub-service-items
   ```javascript
     body = {
@@ -63,6 +74,16 @@
       success: true/false,
     }
   ```
+  >UPDATE operator/sub-services
+  ```javascript
+    body = {
+      power,plateData,startDate,FinishDate,operatorComments
+    }
+    return {
+      success: true/false,
+    }
+  ```
+
 
 
 ## Requerimientos
@@ -70,10 +91,28 @@
   ### Visual
   - Muestra un listado de requerimientos solicitados por el usuario (no comprados)
   - Muestra un formulario para agregar mas solicitudes de compra (cantidad, descripcion)
-  - 
   ### Funcionamiento
   - Los requerimientos conforme van siendo comprados se eliminan en tiempo real de la lista (deseable)
   ### Peticiones
+  >POST operator/add-requirements
+  ```javascript
+    body = [
+      {name,quantity,userId,subServiceId,measurementeUnityId,itemInvoiceCodeId},...
+    ]
+    return {
+      succes: true/false,
+    }
+  ```
+  >GET operator/requirements/:userId
+  ```javascript
+  // solo pendientes
+    return {
+      success: true/false,
+      data: [
+        {id,quantity,itemInvoiceCodeId,measurementUnityId,subServiceId},...
+      ]
+    }
+  ```
 
 ## Esquemas
   > operator/schemes
@@ -86,19 +125,27 @@
   ### Funcionamiento
   - Todos los enlaces redirijen a un arhivo google drive
   ### Peticiones
+  >GET operator/scheme?groups=&poles=
+  ```javascript
+    return {
+      success: true/false,
+      data: [
+        {id,imageDriveId,details},...
+      ]
+    }
+  ```
+  >UPDATE operator/scheme-sub-service
+  ```javascript
+    body = { subServiceId, schemeId }
+    return {
+      success
+    }
+  ```
+  >POST operator/scheme
+  ```javascript
+    body = {groups,poles,imageDriveId,details}
+    return {
+      success: true/false,
+    }
+  ```
 
-
-
-# Acciones  (mobile)
-- Visualizar la lista de sub servicios a su cargo
-  - ot
-  - cliente
-  - compañia
-- Al hacer click lo lleva a la informacion completa del sub servicio
-  - Marcar la fecha de inicio del sub servicio
-  - Marcar como finalizado el servicio
-  - subir fotos de recepcion, proceso 
-- Solicitar compras de repuestos, insumos o servicios
-- Subir fotos de esquema y asociarla a una sub ot
-- Asociar un esquema a una sub ot
-- Subir las necesidades de la sub ot

@@ -1,3 +1,28 @@
+# Opciones de menu
+## Servicios
+
+## Requerimientos tecnicos
+
+## Presupuesto
+
+## Compras
+
+## Facturas
+
+## Estados de cuenta
+
+## Guias
+
+## Notas de Credito
+
+## Inventario
+
+## Esquemas
+
+## Otros (entidades, companies, serials, cars, drives, machineTypes, machineBrands, measurementUnits, spareBrands,spareTypes,detractions,transferReasons,itemInvoiceCodes,itemDeliveryNotesCodes)
+
+
+
 # Acciones (desktop - mobile)
 - Intercambiar entre la lista de compañias
 - Crear ots y sub ots
