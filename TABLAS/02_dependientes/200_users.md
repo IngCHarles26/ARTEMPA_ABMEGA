@@ -17,6 +17,7 @@
 - phone **number** Telefono de contacto (whatsapp, telegram)
 - address **string** Direccion de residencia del usuario
 - dni **number** Documento nacional de identificacion
+- petittions **number** Numero de peticiones de acceso por dia
 
 - companyId **relation_201** uno a muchos (si el usuario esta asocciado a un cliente) // por definir (usado para que los clientes puedan descargar las facturasen nuestra web)
 
@@ -24,6 +25,7 @@
 ### Funciones
 - Login o logout: Todos
 - Creacion de Usuarios: Admin
+- Cada que se solicita el acceso del usuario, se suma un valor en peticiones, cuando llega a 5 por dia, rechaza
 
 ### Consideraciones
 - Limite de 3 sessiones por usuario

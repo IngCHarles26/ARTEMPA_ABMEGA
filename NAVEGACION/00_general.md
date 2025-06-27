@@ -1,7 +1,7 @@
 # Rutas generales
 
 ## JWT
-El json web token tendra la siguiente estructura
+El json web token tendra la siguiente estructura, el cual se va a guardar en una cookie de solo acceso por https
 ```javascript
   {
     id: 1290,
@@ -11,11 +11,39 @@ El json web token tendra la siguiente estructura
     limitTime: '00:00 del dia siguiente'
   }
 ```
-## Peticiones
-- Toda la informacion que sea enviada del servidor, se va a guardar en el store para futuras consultas y evitar peticiones repetidas
-- Las tablas que solo son id-name, tendran el mismo endpoint devolviendo un objeto [id]:name
-- Las peticiones se guardan en el local storage, para cuando se haga la misma, no se vuelva a repetir la misma peticion
-- En los forms que tengan un input de mes y año, se deben tener un minimo de fecha para no pedir fechas futuras y o muy antiguas
+## Consideraciones aplicables a todo el proyecto
+- Se tendra un slice con la lista de peticiones realizadas y otro slice con los datos de esas peticiones, por lo que al hacer una peticion primero se revisa en el store si estas existen, luego se suministra la informacion primero del store y luego de la peticion del backend.
+- Las tablas simples que solo tienen las columnas id-name (102, 103, 106,107, 108, 109, 110, 112, 113, 114) compartiran el mismo endpoint para el manejo de sus datos.
+- Las tablas 0 (se guardan por codigo), tambien van a almacenar variables generales de todo el archivo que no implican seguridad 
+  - Mes y año limites, para los inputs que son para periodos mensuales.
+- Tanto en el back como en el front, se va a realizar el filtrado de los tipos de role, para proteger las rutas y las peticiones.
+- Cuando se refrezca la pagina, se revisa el local storage para ver los datos el: id, name y role; si los datos existen, se redirige al menu principal, por el contrario se redirige al componente login. 
+- En todas las
+## Login
+  > /login
+  ### Funciones
+  - Loguear al usuario
+  - Guardar el JWT sobre los datos de sesion del usuario 
+  ### Funcionamiento
+  - Si el registro es exitoso se guarda el JWT en una cookie http only y en el local-storage {id,name,role}
+  - 
+  ### Visual
+  - Formulario con input de user y password, además de un boton para inicio de sesion
+  - Mensaje de respuesta por un mal login
+  ### Peticiones
+  ```js
+    //GET /login=userName&password
+    return {
+      token: 'jwt',
+    }
+  ```
+
+## Logout
+  > /logout
+  ### Funciones
+  ### Funcionamiento
+  ### Visual
+  ### Peticiones
 
 ## Acceso general
 - Se utilizara el local storage (id, name y role) para decirle al front los componentes a mostrar, el usuario que esta realizando las acciones y el nombre del usuario; las acciones que el usuario haga se validan contrastando la informacion del local storage y el JWT generado en el login, además de guardar el role, id y nombre en el store.
