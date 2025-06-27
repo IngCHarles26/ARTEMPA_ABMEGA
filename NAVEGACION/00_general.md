@@ -14,6 +14,8 @@ El json web token tendra la siguiente estructura
 ## Peticiones
 - Toda la informacion que sea enviada del servidor, se va a guardar en el store para futuras consultas y evitar peticiones repetidas
 - Las tablas que solo son id-name, tendran el mismo endpoint devolviendo un objeto [id]:name
+- Las peticiones se guardan en el local storage, para cuando se haga la misma, no se vuelva a repetir la misma peticion
+- En los forms que tengan un input de mes y año, se deben tener un minimo de fecha para no pedir fechas futuras y o muy antiguas
 
 ## Acceso general
 - Se utilizara el local storage (id, name y role) para decirle al front los componentes a mostrar, el usuario que esta realizando las acciones y el nombre del usuario; las acciones que el usuario haga se validan contrastando la informacion del local storage y el JWT generado en el login, además de guardar el role, id y nombre en el store.

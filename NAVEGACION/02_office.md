@@ -9,21 +9,86 @@
 ## Requerimientos tecnicos
   > office/requirements
   ### Funcionamiento
-  - Visualiza los requerimientos solicitados por los operadores
+  - Visualiza los requerimientos solicitados por los operadores, marcados como no comprados
   - Marca los requerimientos adquiridos
+  - Las casillas marcadas deben ser persistentes y guardadas en local storage
   ### Visual
-  - Muestra
-    
+  - Muestra una tabla con las peticiones de los tecnicos pendientes de compra (quantity, descripcion, measurementUnityId, itemInvoiceCode,  )
+  - Cada fila tiene una casilla que se puede marcar
+  - Presenta un boton para marcar como comprados los items 
   ### Peticiones
+  >GET office/requirements
+  ```javascript
+    return {
+      success: true/false,
+      data:[
+        {id,quantity,name,userId,itemInvoiceCodeId,mesaruementUnityId,subServiceId},...
+      ]
+    }
+  ```
+  >POST office/mark-requirements
+  ```javascript
+    body = {
+      data: [...requirementId]
+    }
+    return {
+      succes: true/false
+    }
+  ```
+
 ## Presupuesto
 
 ## Compras
+  > office/purchases
+
+  > office/purchases/:purchaseId
+  ### Funciones
+  - Seleccionar el año, mes y company en un form y un boton para traer los datos, o tambien seleccionar las compras por cliente, cuando cambias los valores de los inputs se resetea la lista de de facturas mostradas, tambien debe haber un boton para subir los cambios, que solo se debe mostrar o habilitar cuando se detecte un cambio.
+  - Se visualiza una tabla con los datos de las facturas segun el form, teniendo la opcion de ver en una aruta toda la informacion de la compra, con la opcion de editar los valores. Conforme se vayan editando las facturas, se va agregando los cambios segun el id de compra efectuado, cuando se da al boton de subir, se guardan todos los cambios en la base de datos
+  - Se puede ordenar por fecha, proveedor y estado de pago 
+  ### Visual
+  - Muestra un form en la parte superior con los inputs y botones 
+  - Muestra una tabla con los datos de las facturas (dia, serial, number, shortName, total), tambien un boton en cada fila donde se accede a los detalles del componente
+  - Muetra un boton para guardar los cambios
+  ### Peticiones
+  >GET office/purchases?month&year
+  ```javascript
+    return {
+      succes: true/false,
+      data: [
+        {...allPurchasesIds},...
+      ]
+    }
+  ```
+  >POST office/purchases
+  ```javascript
+    body = [
+      {...onlyKeysChanged},...
+    ]
+  ```
 
 ## Facturas
+  > office/invoices
+  > office/invoices/:invoiceId
+  ### Funciones
+  - Se selecciona el (año, mes), (vencidas), (cliente) y company; además de un boton para solicitar los datos, 
+  - Se suben los cambios realizados en las facturas
+  - Se puede editar 
+  ### Visual
+  ### Peticiones
 
 ## Estados de cuenta
+  > office/bank-statements
+  ### Funcionamiento
+  - Ver los estados de cuenta por enlace de drive
+  - Ver la lista de estados de cuenta desde el inicio
+  - Seleccionar la company de la cual se va a solicitar los estados de cuenta
+  - Agregar un estado de cuenta
+
 
 ## Guias
+  ### Funciones
+  - 
 
 ## Notas de Credito
 

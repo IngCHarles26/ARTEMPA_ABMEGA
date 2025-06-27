@@ -3,7 +3,7 @@
 - id **number** identificador unico del tipo de requerimiento
 - name **strung** descripcion del requerimiento de la compra
 - quantity **number** cantidad solicitada
-- done **bool** indica si ya fue comprado\
+- done **bool** indica si ya fue comprado (si tiene fecha de compra)
 - date **bigInt** fecha en segundos en la que se solicito la compra
 - buyDate **bigInt** fecha en segundos en la que se realizo la compra
 
