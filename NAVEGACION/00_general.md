@@ -18,15 +18,16 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   - Mes y año limites, para los inputs que son para periodos mensuales.
 - Tanto en el back como en el front, se va a realizar el filtrado de los tipos de role, para proteger las rutas y las peticiones.
 - Cuando se refrezca la pagina, se revisa el local storage para ver los datos el: id, name y role; si los datos existen, se redirige al menu principal, por el contrario se redirige al componente login. 
-- En todas las
+
 ## Login
   > /login
   ### Funciones
   - Loguear al usuario
+    - Envia al usuario logueado al componente *home*
   - Guardar el JWT sobre los datos de sesion del usuario 
-  ### Funcionamiento
-  - Si el registro es exitoso se guarda el JWT en una cookie http only y en el local-storage {id,name,role}
-  - 
+    - Guarda el JWT en una cookie http only y en local-storage {id,name,role}
+    - Si en local storage no existe {id,name,role}, se realiza una peticion con el JWT para reconstruir esa informacion.
+
   ### Visual
   - Formulario con input de user y password, además de un boton para inicio de sesion
   - Mensaje de respuesta por un mal login
@@ -34,6 +35,7 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   ```js
     //GET /login=userName&password
     return {
+      msg: 'guelcom'
       token: 'jwt',
     }
   ```
@@ -41,62 +43,43 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
 ## Logout
   > /logout
   ### Funciones
-  ### Funcionamiento
+  - Desloguear al usuario
+    - Envia el JWT por HTTP para validar que el usuario sea el que verdaderamente esta queriendo desloguearse
+    - Borra el JWT de la cookie y los datos de local-storage
+  ### Visual
+    - Boton con icono en el aside izquierdo de todos los menus de usuarios
+  ### Peticiones
+  ```js
+    //POST /logout
+    body = {
+      toke: JWT
+    }
+    return {
+      msg: 'bye',
+    }
+  ```
+
+## Componente *home*
+  > user-type/home
+  ### Funciones
   ### Visual
   ### Peticiones
+  ```js
+  ```
 
-## Acceso general
-- Se utilizara el local storage (id, name y role) para decirle al front los componentes a mostrar, el usuario que esta realizando las acciones y el nombre del usuario; las acciones que el usuario haga se validan contrastando la informacion del local storage y el JWT generado en el login, además de guardar el role, id y nombre en el store.
-- Si existe local storage y JWT, el usuario navega libremente en las opciones disponibles, actualizando los estados en el store.
-- Si no existe JWT, el navegador debe llevar al usuario al componente login
-- Si no existe local storage pero si existe JWT, el navegador debe actualizar la informacion del local storage con una peticion al servidor.
-- Al hacer log out, se elimina la informacion del local storage y el JWT con la peticion al servidor.
 
-### Peticiones
->GET /validate-user
-```javascript
-  return {
-    success: true/false,
-    data  = {
-      id: 0,
-      name: '',
-      userName: '',
-      role: '',
-    }
-  }
-```
->GET /user-logout
-```javascript
-  return {
-    success: true/false,
-  }
-```
-## Componente Login
-> /login
-### Visual
-- Muestra un formulario para el inicio de sesion con input para userName y password
-- En la parte inferior izquierda  muestra pop-ups con los mensajes de respuesta que manda el servidor
-### Funcionamiento
-- Al hacer login se guarda en una cookie el JWT con la informacion de la sesion y guarda en local storage el id, name y role del usuario logueado.
-- Cuando la sesion es exitosa manda al componente *home* y el servidor retorna el JWT de la sesion que dura hasta las 00:00 del dia siguiente
-### Peticiones
->POST /user-login
-```javascript
-  // sin JWT
-  body = {
-    userName: '',
-    password: ''
-  }
-  return {
-    data:{
-      id: 0,
-      name: '',
-      userName: '',
-      role: '',
-    },
-    token: '',
-  }
-```
+
+## Componente *user-info*
+  > user-type/user-info
+  ### Funciones
+  ### Visual
+  ### Peticiones
+  ```js
+  ```
+
+
+
+
 
 
 ## Componente Home
