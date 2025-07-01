@@ -1,15 +1,16 @@
 # Opciones de Menu
 ## Estados de cuenta
   > accountant/bank-states
+  ### Funciones
+  - Visualizar y descargar la lista de estados de cuenta de *companies*
+    - Los enlaces de descarga llevan al enlace de Google Drive.
+  - Ordenar por fecha y filtrar por *company* 
   ### Visual
-  - Muestra la lista de estados de cuenta: mes, año, company y pdf
-  ### Funcionamiento
-  - Se puede filtrar (company) y ordenar (mes, año, company) 
-  - Al hacer click en pdf, debe redireccionar al enlace de google drive
+  - Muestra una tabla con las columnas: mes, año, pdf y company
 
   ### Peticiones
-  >GET /bank-states
-  ```javascript
+  ```js
+  //GET /bank-states
     return {
       success: true/false,
       data : {
@@ -27,7 +28,26 @@
 
 ## Ventas
   > accountant/sales
+
+  > accountant/sales/:invoiceId
+  ### Funciones
+  - Mostrar la lista de facturas de ventas
+  - Marcar el pago de facturas y el pago de detraccion
+  - Diferenciar las facturas pagadas, vencidas y pendientes
+  - 
   ### Visual
+  - Muestra un formulario en la parte superior
+    - Sera el filtro para extraer la informacion de las
+  - Muestra una tabla con la lista de facturas
+  - Muestra un pop-up con la informacino completa de las facturas y para agregar datos de pago 
+   con inputs de mes y año o cliente, el
+
+
+
+
+
+
+
   - Muetra un nav-bar para mostrar las ventas por periodo y por cliente
   - Muestra un slider para intercambiar entre las companies
   - Muestra un boton para hacer la busqueda en base a a los inputs

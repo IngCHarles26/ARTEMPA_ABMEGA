@@ -18,7 +18,8 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   - Mes y año limites, para los inputs que son para periodos mensuales.
 - Tanto en el back como en el front, se va a realizar el filtrado de los tipos de role, para proteger las rutas y las peticiones.
 - Cuando se refrezca la pagina, se revisa el local storage para ver los datos el: id, name y role; si los datos existen, se redirige al menu principal, por el contrario se redirige al componente login. 
-- En las peticiones al back, se va a tener una palabra secreta como variable de entorno, que va al inicio de cada peticion para proteger las rutas del servidor
+- En las peticiones al back, se va a tener una palabra secreta como variable de entorno, que va al inicio de cada peticion para proteger las rutas del servido
+- Para todas las tablas, cuando el mouse pasa por una fila, la fila cambia de color o una tonalidad mas oscura respecto al fondo.
 
 ## Login
   > /login
@@ -72,9 +73,7 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   - Lista de opciones en un aside con un color de fondo diferente
   - El aside consta de imagen texto, que al mover el mouse se agranda ligeramente y al estar seleccionada su color de fondo es mas oscuro que el de los demas además de cambiar el color del texto, en mobile tiene un boton para ocultar el aside, tambien debe tener un boton para hacer log-out, en la parte super muestra la informacion del usuario logeado y al hacer click lleva al componetne *user-info*.
   - En mobile se tiene un boton que muestra el aside y el boton se oculta cuando no hay movimiento o acciones en el sitio.
-  ### Peticiones
-  ```js
-  ```
+
 
 
 

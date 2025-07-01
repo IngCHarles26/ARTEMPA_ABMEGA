@@ -1,7 +1,8 @@
-# Opciones de menu
+# Opciones de Menu
 
 ## Lista de Users
   > admin/users-list
+  
   > admin/user-list/:userId
   ### Funciones
   - Ver la lista de usuarios de la página
