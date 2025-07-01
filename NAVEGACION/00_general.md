@@ -18,6 +18,7 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   - Mes y año limites, para los inputs que son para periodos mensuales.
 - Tanto en el back como en el front, se va a realizar el filtrado de los tipos de role, para proteger las rutas y las peticiones.
 - Cuando se refrezca la pagina, se revisa el local storage para ver los datos el: id, name y role; si los datos existen, se redirige al menu principal, por el contrario se redirige al componente login. 
+- En las peticiones al back, se va a tener una palabra secreta como variable de entorno, que va al inicio de cada peticion para proteger las rutas del servidor
 
 ## Login
   > /login
@@ -52,7 +53,7 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
   ```js
     //POST /logout
     body = {
-      toke: JWT
+      token: JWT
     }
     return {
       msg: 'bye',
@@ -62,7 +63,15 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
 ## Componente *home*
   > user-type/home
   ### Funciones
+  - Mostrar las acciones que puede realizar un usuario
+  - Navegar entre funciones 
+  - Log out del usuario
+  - Mostrar un mensaje de bienvenida
+    - Aparece despues de loguearnos o cuando se refrezca la pagina y se pierden los valores del local-storage
   ### Visual
+  - Lista de opciones en un aside con un color de fondo diferente
+  - El aside consta de imagen texto, que al mover el mouse se agranda ligeramente y al estar seleccionada su color de fondo es mas oscuro que el de los demas además de cambiar el color del texto, en mobile tiene un boton para ocultar el aside, tambien debe tener un boton para hacer log-out, en la parte super muestra la informacion del usuario logeado y al hacer click lleva al componetne *user-info*.
+  - En mobile se tiene un boton que muestra el aside y el boton se oculta cuando no hay movimiento o acciones en el sitio.
   ### Peticiones
   ```js
   ```
@@ -72,74 +81,28 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
 ## Componente *user-info*
   > user-type/user-info
   ### Funciones
+  - Visualizar los datos del usuario
+  - Editar userName y password
+    - Al hacer un cambio de estos, se hace un log-out del usuario
+  - Editar la informacion del usuario (name, lastName, phone, address)
+    - Al presionar el boton de editar se convierten en inputs los lugares seleccionados y si se hace un cambio en el valor se guardan los nuevos datos para la peticion.
+    - Los nuevos datos se envian por peticion pero se usara la informacion local para mostrar los valores, 
+    - Puede editar todas o solo algunas
   ### Visual
+  - Muestra la informacion completa del usuario 
+  - Muestra un boton de edit y save
   ### Peticiones
   ```js
+    //POST /edit-user-info
+    body = {?name,?lastName,?phone,?address}
+    return {
+      succes: true/false
+    }
+
+    //POST /edit-user-access
+    body = {newUserName,newPassword}
+    return {
+      success: true/false,
+      resetCookie
+    }
   ```
-
-
-
-
-
-
-## Componente Home
-> 'typeUser'/home
-
-### Visual
-- Muestra un aside en la izquierda con las opciones de menu dependiendo del tipo de usuario.
-- En la parte derecha ocupando la mayor parte del espacio, se muestra el body con contenido del componente dependiendo de la opcion del menu seleccionada.
-- Al iniciar sesion y no se tiene una opcion del menu seleccionada muestra un mensaje de bienvenida al usuario en body.
-- Las opciones de menu constan de un icono y un nombre, los iconos al estar ocultos y pasar el mouse sobre ellos se muestra el nombre del componente como comentario.
-- Debe resaltar la opcion seleccionada en el aside.
-- En mobile se tiene un boton que muestra el aside de lado izquierdo sobre el contenido del componente principal, este boton desaparece si el usuario no hace acciones por uno determinado tiempo, cuando vuelve a interactuar aparece nuevamente el boton.
-- En mobile el boton de menu se muestra en la parte inferior izquierda, cuando se muestra el menu, el boton se oculta
-- En el aside debe haber la opcion para esconder el menu, en desktop muestra solo los iconos de los menus y en mobile oculta completamente el componente
-- En la parte inferior del aside, debe haber un boton para hacer log-out con confirmacion de accion.
-- En la parte superior del aside, muestra un logo del usuario, el nombre y el role; al hacer click nos lleva a la informacion del usuario
-
-### Funcionamiento
-- Al dar click en cada opcion nos lleva a la ruta del componente
-
-
-
-
-## Componente user-info
-> 'typeUser'/user-info
-
-### Visual
-- Muestra la informacion completa del usuario
-- Muestra un boton para editar usuario y contraseña, no necesariamente las dos
-- Muestra un boton para editar informacion general (name, lastName, phone, address), puede enviar todas o solo algunas; si la respuesta es positiva se actualizan los datos cambiados en el store
-
-
-### Funcionamiento
-- Al hacer un cambio de usuario o contraseña, se elimina la sesion en el front.
-- Esta opcion esta disponible para todos los tipos de usuarios excepto (por definir) admin y client
-
-### Peticiones
->POST /edit-user-info
-```javascript
-  body = {
-    userInfo:{
-      name: '',
-      lastName: '',
-      phone: '',
-      address: '',
-    },
-  }
-  return {
-    success: true/false,
-  }
-```
->POST /edit-user-access
-```javascript
-  body = {
-    userInfo: {
-      userName: '',
-      password: '',
-    },
-  }
-  return {
-    success: true/false,
-  }
-```

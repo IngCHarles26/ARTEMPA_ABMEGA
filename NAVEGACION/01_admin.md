@@ -1,54 +1,43 @@
 # Opciones de menu
 
 ## Lista de Users
-  > admin/list-users
+  > admin/users-list
+  > admin/user-list/:userId
+  ### Funciones
+  - Ver la lista de usuarios de la página
+  - Editar la informacion de los usuarios
   ### Visual
-  - Muestra la lista de usuarios: id, userName, name, role
-  ### Funcionamiento
-  - Al hacer click en un usuario nos lleva a un modal con la informacion completa del usuario (menos la contraseña)
-  - El modal muestra un boton que permite editar la informacion de los usuarios: role, active, dni
-  - Se puede filtrar (role, active) y ordenar (lastname, role, active) la lista de usuarios
+  - Muestra la tabla con la lista de usuraios: id, userName, name, lastName, role, active
+    - Se puede filtrar por role y active; y ordenar por lastName y role
+    - En cada fila hay un boton para editar la informacion del usuario que al presionar nos lleva al componente detail
+    - En el detail de user, se muestra la informacion del usuario y los editables como inputs (role, active, dni)
   ### Peticiones
-  >GET /list-users
-  ```javascript
+  ```js
+  //GET /list-usres
     return {
       success: true/false,
       data: [
-        {
-          id,
-          userName,
-          name,
-          lastName,
-          active,
-          phone,
-          address,
-          dni
-        },...
+        {id,userName,name,lastName,active,role},...
       ]
     }
-  ```
-  >POST /edit-user/:id
-  ```javascript
-    body = {
-      ?role: '',
-      ?active: '',
-      ?dni: '',
-    }
+
+  //POST /edit-user
+    body = {id,?role,?active,?dni}
     return {
-      success: true/false,
+      success: true/false
     }
   ```
 
 
 ## Crear Users
   > admin/create-user
+  ### Funciones
+  - Crear nuevos usuarios
   ### Visual
   - Muestra un formulario con inputs: userName, password, role, name, lastName, phone
-  ### Funcionamiento
-  - Hace la peticion del nuevo usuario y verifica que quien la haga sea el usuario admin
   ### Peticiones
-  >POST /create-user
-  ```javascript
+  ```js
+  //POST /create-user
     body = {
       userName = '',
       password = '',
