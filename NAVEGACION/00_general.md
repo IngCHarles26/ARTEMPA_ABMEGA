@@ -20,6 +20,8 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
 - Cuando se refrezca la pagina, se revisa el local storage para ver los datos el: id, name y role; si los datos existen, se redirige al menu principal, por el contrario se redirige al componente login. 
 - En las peticiones al back, se va a tener una palabra secreta como variable de entorno, que va al inicio de cada peticion para proteger las rutas del servido
 - Para todas las tablas, cuando el mouse pasa por una fila, la fila cambia de color o una tonalidad mas oscura respecto al fondo.
+- Todos los componentes detail deben tener un boton para retornar al componente anterior
+- Se va a tratar de eliminar toda la carga posible al servidor y que los datos los procese el cliente
 
 ## Login
   > /login

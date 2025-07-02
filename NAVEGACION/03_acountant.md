@@ -32,55 +32,35 @@
   > accountant/sales/:invoiceId
   ### Funciones
   - Mostrar la lista de facturas de ventas
-  - Marcar el pago de facturas y el pago de detraccion
+    - Hay un formulario para extraer las facturas segun el periodo, cliente, vencimiento y company;
+    - Dependiendo de la opcion elegida, se deben llenar los inputs para que se habilite el boton de buscar (comun para todos los tipos de busqueda)
+    - Se puede ordenar por cliente, fecha, estado, por defecto se ordenan de la mas reciente a la mas antigua
+  - Marcar el pago de facturas y el pago de detraccion (operacion y fecha)
+    - Los cambios de estado de facturas se debe reflejar en el store.
   - Diferenciar las facturas pagadas, vencidas y pendientes
-  - 
   ### Visual
-  - Muestra un formulario en la parte superior
-    - Sera el filtro para extraer la informacion de las
-  - Muestra una tabla con la lista de facturas
-  - Muestra un pop-up con la informacino completa de las facturas y para agregar datos de pago 
-   con inputs de mes y año o cliente, el
+  - Muestra un formulario en la parte superior para hacer la busqueda de facturas
+    - Slider busqueda: periodo, cliente, vencidas y factura
+    - Input de fecha, mes, cliente, serie, numero y company
+    - Boton de buscar
+    - El formulario queda fijo arriba asi como las cabeceras de la tabla
+    - Muestra una paginacion en base al tamaño de la pantalla y la cantidad de facturas que entran (pacgina actual, ultima pagina como texto, boton de siguiente y anterior pagina)
+  - Muestra una tabla con la lista de facturas (serie, numero, fecha, cliente, importe, pdf,*detail*,estado)
+    - Al hacer click en *detail* lleva al componente detail de factura con la informacion completa
+    - Dependiendo del estado (pendiente, pagada, vencida) se pinta de un color determinado
+  - Detail Factura: muestra un pop-up con la informacino completa de las facturas y
+    - Input para agregar datos de pago (numero de operacion y fecha) y pago de detraccion (numero de operacion y fecha).
 
-
-
-
-
-
-
-  - Muetra un nav-bar para mostrar las ventas por periodo y por cliente
-  - Muestra un slider para intercambiar entre las companies
-  - Muestra un boton para hacer la busqueda en base a a los inputs
-  - Muestra un mensaje para indicar al usuario que debe rellenar los inputs antes de ver la informacion.
-  - Muestra una tabla con la informacion de las facturas (serie, numero, fecha, cliente, importe, pdf)
-  - Las facturas pagadas, vencidas y las demas se pintaran de un color determinado
-  - Al hacer click en una fila, nos lleva a la informacion completa de la factura y la opcion para editar la informacion de pago y demas informacion; en este componente debe aparecer la opcion de regresar al home (este componente se va a reutilizar en todos los elementos que den detalles sobre alguna accion)
-  - Si las facturas no entran en la pantalla, se el header de la tabla queda fijo y permite hacer scroll
-  - Debe mostrar botones para la paginacion, el total de paginas, la pagina actual y un input con boton para ir a una determinada pagina, ademas de un boton para resetear los filtros.
-  - Muestra un input para acceder directamente a una factura por serie y numero
-  - Mostrar un boton para acceder a un form para ingresar la informacion de pago de la factura (detraccion y restante)
-  ### Funcionamiento
-  - Al iniciar el componente, todos los inputs estan vacios, el boton para hacer la peticion se encuentra deshabilitado hasta que todos los inputs esten llenos
-  - Se puede filtrar las facturas por pendientes, pagadas y vencidas, el numero total de paginas depende de los filtros aplicados
-  - Dependiendo de la cantidad de facturas, solo se mostraran 25 por pagina, las peticiones se haran de 25 en 25
-  - Al entrar al modal de la factura, hace la peticion por id para mostrar la informacion completa
-  - Si se hace un cambio en los inputs del formulario, se borra todos los elementos de la tabla y se reemplazan por los nuevos valores
-  - Las facturas se ordenan por defecto de la mas reciente a la mas antigua
-  - Al actualizar satisfactoriamente cualquier factura, se hace el cambio de esa informacion en el store
-  - Si se accede a una factura por numero y serie, la company debe estar seleccionada para poder hacer la peticion
-  - *Idea*: Por defecto puede mostrar las ventas del mes actual de abm y megaman, llenar estos valores en el formulario de solicitud de datos al inicio del componente.
   ### Peticiones
-  >GET /all-companies
   ```javascript
+  //GET /all-companies
     return {
       success: true/false,
       data: [
         {id,shortName},...
       ]
     }
-  ```
-  >GET /all-clients/:companyId
-  ```javascript
+  //GET /all-clients/:companyId
     return {
       success: true/false,
       data: [
@@ -89,16 +69,9 @@
         }
       ]
     }
-  ```
-  >POST /invoices
-  ```javascript
-    // Se da preferencia al clientId, 
+  //POST /invoices
     body = {
-      alreadyInvoiceIds: [],
-      quantity:25,
-      clientId,
-      month,
-      year,
+      month, year, clientId, state,companyId
     }
     return {
       success: true/false,
@@ -107,37 +80,24 @@
         ...
       ]
     }
-  ```
-  >GET /invoice/:id
-  ```javascript
+  //GET /invoice/:id
     return {
       success: true/false,
       data: {
         allInvoiceInformation...
       }
     }
-  ```
-  >GET /invoice?serial=&number=&company=
-  ```javascript
-    return {
-      success: true/false,
-      data: {
-        allInvoiceInformation...
-      }
-    }
-  ```
-  >UPDATE /invoice/:invoiceId
-  ```javascript
+  //UPDATE /invoice/:invoiceId
     // Puedo actualizar cualquier valor de la factura menos, (number, date,igv)
     body = {
-      ?bodyKeys: newData,
-      ...
-    }
-    return {
+      payDate,detractionPayDate,payOperation,detractionPayOperation
+    }    return {
       success: true/false,
     }
   ```
 
+
+aqui
 
 ## Compras
   > accountant/purchases
