@@ -31,26 +31,15 @@
 
   > accountant/sales/:invoiceId
   ### Funciones
-  - Mostrar la lista de facturas de ventas
-    - Hay un formulario para extraer las facturas segun el periodo, cliente, vencimiento y company;
-    - Dependiendo de la opcion elegida, se deben llenar los inputs para que se habilite el boton de buscar (comun para todos los tipos de busqueda)
-    - Se puede ordenar por cliente, fecha, estado, por defecto se ordenan de la mas reciente a la mas antigua
-  - Marcar el pago de facturas y el pago de detraccion (operacion y fecha)
-    - Los cambios de estado de facturas se debe reflejar en el store.
-  - Diferenciar las facturas pagadas, vencidas y pendientes
+  - Mostrar la lista de facturas de ventas segun la company y: periodo, cliente y vencidas en forma de tabla
+    - Datos a ver: dia, mes, año, serie, numero, cliente, monto, pdf, xml, estado (color)
+  - Editar la informacion de la factura (fecha pago, numero de operacion, fecha de pago de detraccion y numero de operacion de detraccion); accediento al detail por boton
+  - Ordenar las facturas por cliente y fecha
+  - Diferenciar por color de fondo las facturas pagadas, vencidas y pendientes.
   ### Visual
   - Muestra un formulario en la parte superior para hacer la busqueda de facturas
-    - Slider busqueda: periodo, cliente, vencidas y factura
-    - Input de fecha, mes, cliente, serie, numero y company
-    - Boton de buscar
-    - El formulario queda fijo arriba asi como las cabeceras de la tabla
-    - Muestra una paginacion en base al tamaño de la pantalla y la cantidad de facturas que entran (pacgina actual, ultima pagina como texto, boton de siguiente y anterior pagina)
-  - Muestra una tabla con la lista de facturas (serie, numero, fecha, cliente, importe, pdf,*detail*,estado)
-    - Al hacer click en *detail* lleva al componente detail de factura con la informacion completa
-    - Dependiendo del estado (pendiente, pagada, vencida) se pinta de un color determinado
-  - Detail Factura: muestra un pop-up con la informacino completa de las facturas y
-    - Input para agregar datos de pago (numero de operacion y fecha) y pago de detraccion (numero de operacion y fecha).
-
+  - Mostrar un navbar para la paginacion y ordenar los valores de la tabla
+  - Muestra una tabla con la lista de facturas
   ### Peticiones
   ```javascript
   //GET /all-companies
@@ -101,19 +90,17 @@ aqui
 
 ## Compras
   > accountant/purchases
-  ### Visual
-  - Muestra un form para ingresar: company, mes y año; además de un boton para solicitar la informacion
-  - Similar al componente de ventas pero solo se puede seleccionar el periodo de compras (dejando de lado la seleccion por proveedor)
-  - Muestra una tabla con la informacion de las facturas (serie, numero, shortName, dia, total, paid )
-  - Al hacer click en la una fila nos lleva al detalle de la compra, dando la opcion para editar la informacion
-  - El funcionamiento de la paginacion es exactamente igual al de las ventas
-  - El filtrado debe ser por proveedor (puediendo seleccionar multiples proveedores en el filtrado), el ordenamiento es por la factura mas reciente
-  - 
   ### Funcionamiento
-  - Por defecto al entrar al componente se cargan las compras y ventas del mes y el año actuales
-  - Toda la informacion se guarda en el store
-  - En la pagina solo se mostraran 25 facturas, pero las peticiones se haran por todas las facturas de los periodos.
-  - 
+  - Mostrar la lista de compras segun el periodo y la company
+    - Datos a ver: dia, mes, año, serie, numero, ruc, proveedor, inStorage, edit
+  - Agregar comentarios a la factura y si esta en posecion
+    - Abre un pop-up que muestra el comentario que tiene, edita el comentario y agrega uno nuevo
+  - Guardar todos los cambios 
+  - Ordenar por provedor, inStorage
+  ### Visual
+  - Muestra un formulario en la parte superior para hacer la busqueda de facturas
+  - Mostrar un navBar para la paginacion, ordenar los valores de la tabla y guardar los cambios
+  - Mostrar una tabla de las facturas con un checkbox para *inStorage* y boton para comentarios
   ### Peticiones
   >GET /purchases?month=&year=
   ```javascript

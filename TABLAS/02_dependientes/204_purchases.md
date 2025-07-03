@@ -9,6 +9,7 @@
 - payOperation **number** numero de operacion de pago (si es por transferencia)
 - payDate **bigInt** fecha de pago de la factura
 - comments **string** comentarios de la factura (control interno)
+- inStorage **bool** La factura esta en nuestro poder
 
 - serialId ***relation_103*** serie de la factura de compra
 - entityId ***relation_201*** uno a muchos (a que proveedor pertenece la compra)

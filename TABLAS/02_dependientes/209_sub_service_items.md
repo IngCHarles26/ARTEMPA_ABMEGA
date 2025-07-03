@@ -4,7 +4,7 @@
 - order **number** Numero de orden de aparicion en el presupuesto
 - quantity **number** Cantidad de items del presupuesto
 - description **number** Descripcion del item del presupuesto
-- price **number** Precio unitario del item del presupuesto
+- price **number** Precio unitario del item del presupuesto (si no tiene precio, no se realiza el servicio)
 
 - subServiceId **relation_208** Relacion con SUB OT
 

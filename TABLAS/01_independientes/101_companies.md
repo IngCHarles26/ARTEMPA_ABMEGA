@@ -8,6 +8,7 @@
 - bcpCC **string** numero de cuenta corriente bcp
 - bcpCCI **string** numero de cuenta interbancario
 - spot **number** numero de cuenta para detracciones
+- color **string** color en exadecimal
 
 ### Informacion inicial
 |id|ruc|name|shorName|address|bcpCC|bcpCCI|spot|

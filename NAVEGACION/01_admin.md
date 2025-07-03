@@ -5,13 +5,12 @@
   
   > admin/user-list/:userId
   ### Funciones
-  - Ver la lista de usuarios de la página
+  - Ver la lista de usuarios de la página en forma de tabla
   - Editar la informacion de los usuarios
+    - Al hacer click en el usuario
   ### Visual
-  - Muestra la tabla con la lista de usuraios: id, userName, name, lastName, role, active
-    - Se puede filtrar por role y active; y ordenar por lastName y role
-    - En cada fila hay un boton para editar la informacion del usuario que al presionar nos lleva al componente detail
-    - En el detail de user, se muestra la informacion del usuario y los editables como inputs (role, active, dni)
+  - Muestra la tabla con la lista de usuraios: id, userName, name, lastName, role, active y un boton de editar
+  - En el detail de user, se muestra la informacion del usuario y los editables como inputs (role, active, dni)
   ### Peticiones
   ```js
   //GET /list-usres

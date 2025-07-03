@@ -22,6 +22,7 @@ El json web token tendra la siguiente estructura, el cual se va a guardar en una
 - Para todas las tablas, cuando el mouse pasa por una fila, la fila cambia de color o una tonalidad mas oscura respecto al fondo.
 - Todos los componentes detail deben tener un boton para retornar al componente anterior
 - Se va a tratar de eliminar toda la carga posible al servidor y que los datos los procese el cliente
+- Todas las tablas tendran una paginacion: boton atras, siguiente, input de pagina y label del total de paginas
 
 ## Login
   > /login
